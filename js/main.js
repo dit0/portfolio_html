@@ -1,12 +1,5 @@
 /**
- * main.js
- * http://www.codrops.com
- *
- * Licensed under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
- * 
- * Copyright 2015, Codrops
- * http://www.codrops.com
+
  */
  (function() {
 
@@ -229,7 +222,7 @@
 					ev.preventDefault();
 					//remove a classe do item atual
 					//$(currentItem).removeClass( "content__item--show" );
-					if(current !== 10) {
+					if(current !== 9) {
 						$(contentItemsContainer).removeClass('content--show');
 						$(gridItems[current+1]).addClass('grid__item--loading grid__item--animate');
 						$(gridItems[current]).removeClass('grid__item--loading grid__item--animate');
