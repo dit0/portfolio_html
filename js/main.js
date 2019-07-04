@@ -1,11 +1,11 @@
 /**
 
- */
- (function() {
+*/
+(function() {
 
- 	var bodyEl = document.body,
- 	docElem = window.document.documentElement,
- 	support = { transitions: Modernizr.csstransitions },
+	var bodyEl = document.body,
+	docElem = window.document.documentElement,
+	support = { transitions: Modernizr.csstransitions },
 		// transition end event name
 		transEndEventNames = { 'WebkitTransition': 'webkitTransitionEnd', 'MozTransition': 'transitionend', 'OTransition': 'oTransitionEnd', 'msTransition': 'MSTransitionEnd', 'transition': 'transitionend' },
 		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
@@ -221,8 +221,10 @@
 				item.addEventListener('click', function(ev) {
 					ev.preventDefault();
 					//remove a classe do item atual
-					//$(currentItem).removeClass( "content__item--show" );
-					if(current !== 9) {
+					$(currentItem).removeClass( "content__item--show" );
+					//change here if put more jobs or remove jobs
+					if(current !== 11) {
+						//TODO: this content--show makes the animation on the titles and everything, fix this later, it's not working
 						$(contentItemsContainer).removeClass('content--show');
 						$(gridItems[current+1]).addClass('grid__item--loading grid__item--animate');
 						$(gridItems[current]).removeClass('grid__item--loading grid__item--animate');
@@ -252,6 +254,7 @@
 				item.addEventListener('click', function(ev) {
 					ev.preventDefault();
 					if(current !== 0) {
+						//TODO: this content--show makes the animation on the titles and everything, fix this later, it's not working
 						$(contentItemsContainer).removeClass('content--show');
 						$(gridItems[current-1]).addClass('grid__item--loading grid__item--animate');
 						$(gridItems[current]).removeClass('grid__item--loading grid__item--animate');
