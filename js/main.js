@@ -222,8 +222,8 @@
 					ev.preventDefault();
 					//remove a classe do item atual
 					$(currentItem).removeClass( "content__item--show" );
-					//change here if put more jobs or remove jobs
-					if(current !== 11) {
+					//change here if put more jobs or remove jobs. needs to be 11 if the number of works is 12 (starts with 0) 
+					if(current !== 13) {
 						//TODO: this content--show makes the animation on the titles and everything, fix this later, it's not working
 						$(contentItemsContainer).removeClass('content--show');
 						$(gridItems[current+1]).addClass('grid__item--loading grid__item--animate');
@@ -242,8 +242,10 @@
 					} else {
 						//desabilitar o botão
 						$(item).addClass('disabled');
+						$(currentItem).addClass( "content__item--show" );
+
 					}
-					console.log("current é final é: "+current);
+					console.log("current final é: "+current);
 				});
 			});
 		};
@@ -273,7 +275,7 @@
 						//desabilitar o botao 
 						$(item).addClass('disabled');
 					}
-					console.log("current é final é: "+current);
+					console.log("current final é: "+current);
 				})
 			});
 		};
@@ -281,10 +283,12 @@
 		// body overlay
 		$(bodyEl).addClass('view-single');
 		var currentItem = $('article.content__item');
+
+		//click on the item to get the job item
 		$.get('./jobs/job_'+current+'.html?', function(respons) {
 			
 			$(currentItem).html(respons);// = $.parseHTML(respons);
-			console.log(currentItem);			
+			console.log(currentItem + current);			
 			next();
 			previous();
 			
