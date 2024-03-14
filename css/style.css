@@ -1,5 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display+SC:400italic,700,900|Raleway:500|Martel+Sans:400,700);
-*, *:after, *:before {
+
+*,
+*:after,
+*:before {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -46,7 +49,9 @@ a:focus {
 button:focus {
   outline: none;
 }
-
+.m-r-3{
+  margin-right: 3px;
+}
 /* Sidebar */
 .sidebar {
   text-align: center;
@@ -73,7 +78,6 @@ button:focus {
   display: block;
 }
 
-/* Codrops links */
 .me {
   position: relative;
   display: inline-block;
@@ -82,26 +86,17 @@ button:focus {
   min-height: 45px;
 }
 
-
-/* Demo links */
-.codrops-demos {
+.about {
   margin: 2em 0 0;
-  font-size: 0.75em;
+  font-size: .9em;
 }
 
-.codrops-demos a {
+.about a {
   display: inline-block;
   margin: 0 0.5em;
 }
 
-.codrops-demos a.current-demo {
-  color: #333;
-  font-weight: bold;
-}
 
-.codrops-demos a.current-demo:focus {
-  color: #aaa;
-}
 
 .related {
   font-size: 0.85em;
@@ -400,7 +395,8 @@ button:focus {
   text-align: left;
 }
 
-.meta .fa {
+.meta .fa,
+.meta .fal {
   margin-right: 4px;
 }
 
@@ -447,11 +443,12 @@ button:focus {
   clear: both;
   text-align: left;
   padding: 5px 0;
+  margin-bottom: 10px;
 }
 
 .meta__misc--seperator {
   padding: 20px 0 0;
-  margin: 65px 0 0;
+  margin: 65px 0 10px;
   border-top: 1px solid #f5f5f5;
 }
 
@@ -727,7 +724,7 @@ button:focus {
   top: 0;
   right: 0;
   font-size: 18px;
-  color: #ddd;
+  color: #7b7b7b;
   cursor: pointer;
   pointer-events: none;
   padding: 20px 30px;
@@ -747,7 +744,7 @@ button:focus {
 }
 
 .close-button:hover {
-  color: #7b7b7b;
+  color: #333;
 }
 
 /* show class for content close button */
@@ -784,33 +781,6 @@ button:focus {
     padding: 45px 45px 30px;
   }
 
-  /* Demo ad */
-  body #cdawrap {
-    right: auto;
-    left: 30px;
-    top: auto;
-    bottom: 0;
-    background: none;
-    border: none;
-    width: 240px;
-    background: #f5f5f5;
-  }
-
-  body #cdawrap .carbon-text {
-    color: #7b7b7b;
-  }
-
-  body #cdawrap a.carbon-poweredby {
-    color: #7883C4;
-  }
-
-  body #cdawrap a:hover.carbon-poweredby {
-    color: #333;
-  }
-
-  body #cdawrap #cda-remove {
-    display: none;
-  }
 }
 @media screen and (min-width: 900px) {
   .grid {
@@ -935,11 +905,6 @@ button:focus {
     z-index: -1;
   }
 }
-@media screen and (max-height: 580px) {
-  body #cdawrap {
-    display: none;
-  }
-}
 /* Redefine some styles for this layout */
 body {
   background: #f5f5f5;
@@ -1038,7 +1003,7 @@ body {
     background: #fff;
     top: 0;
     left: 0;
-    font-size: 0.85em;
+    font-size: 0.9em;
     padding: 15px 30px;
   }
 

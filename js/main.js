@@ -223,7 +223,7 @@
 					//remove a classe do item atual
 					$(currentItem).removeClass( "content__item--show" );
 					//change here if put more jobs or remove jobs. needs to be 11 if the number of works is 12 (starts with 0) 
-					if(current !== 13) {
+					if(current !== 15) {
 						//TODO: this content--show makes the animation on the titles and everything, fix this later, it's not working
 						$(contentItemsContainer).removeClass('content--show');
 						$(gridItems[current+1]).addClass('grid__item--loading grid__item--animate');
@@ -245,7 +245,7 @@
 						$(currentItem).addClass( "content__item--show" );
 
 					}
-					console.log("current final é: "+current);
+					//console.log("current final é: "+current);
 				});
 			});
 		};
@@ -275,7 +275,7 @@
 						//desabilitar o botao 
 						$(item).addClass('disabled');
 					}
-					console.log("current final é: "+current);
+					//console.log("current final é: "+current);
 				})
 			});
 		};
