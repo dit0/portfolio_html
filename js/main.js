@@ -1,6 +1,3 @@
-/**
-
-*/
 (function() {
 
 	var bodyEl = document.body,
@@ -92,82 +89,6 @@
 			// hide content
 			hideContent();
 		});
-
-		//botao next
-/*		[].slice.call(proximo).forEach(function(item, pos) {
-			item.addEventListener('click', function(ev) {
-				ev.preventDefault();
-				var contentItem = contentItems[current], gridItem = gridItems[current];
-				current = pos;
-				//alterar o numero, mesmo numero para posts/jobs -1
-				if(current !== 9) {
-					//console.log(current);
-					//console.log(contentItem);
-					//console.log(gridItem);
-					//console.log('frente / pos: '+pos+ ' current: '+current+ ' contentItem: '+contentItem);
-
-					//classie.add(gridItems[current+1], 'grid__item--loading');
-					//classie.add(gridItems[current+1], 'grid__item--animate');
-					$(gridItems[current+1]).addClass('grid__item--loading grid__item--animate')
-					
-					//classie.removeClass(gridItems[current], 'grid__item--loading');
-					//classie.removeClass(gridItems[current], 'grid__item--animate');
-					$(gridItems[current]).removeClass('grid__item--loading grid__item--animate')
-					
-					//classie.add(contentItems[current + 1], 'content__item--show');
-					$(contentItems[current + 1]).addClass('content__item--show');
-					
-					//classie.removeClass(contentItems[current], 'content__item--show');
-					$(contentItems[current]).removeClass('content__item--show');
-					console.log('next0');
-				} else {
-					//console.log('fim / pos: '+pos+ ' current: '+current)
-					//desabilitar o botão
-					$(item).addClass('disabled');
-					console.log('next1');
-				}
-			})
-		});
-
-		//botao previous
-		[].slice.call(anterior).forEach(function(item, pos) {
-			console.log('previous0');
-			item.addEventListener('click', function(ev) {
-				console.log('previous0');
-				ev.preventDefault();
-				var contentItem = contentItems[current], gridItem = gridItems[current];
-				current = pos;
-				if(current !== -0) {
-					//console.log(current);
-					//classie.add(gridItems[current-1], 'grid__item--loading');
-					//classie.add(gridItems[current-1], 'grid__item--animate');
-					$(gridItems[current-1]).addClass('grid__item--loading grid__item--animate');
-					
-					//classie.removeClass(gridItems[current], 'grid__item--loading');
-					//classie.removeClass(gridItems[current], 'grid__item--animate');
-					$(gridItems[current]).removeClass('grid__item--loading grid__item--animate');
-
-					//classie.add(contentItems[current - 1], 'content__item--show');
-					$(contentItems[current - 1]).addClass('content__item--show');
-					
-					//classie.removeClass(contentItems[current], 'content__item--show');
-					$(contentItems[current]).removeClass('content__item--show');
-					console.log('previous0');
-				}else{
-					//desabilitar o botao 
-					$(item).addClass('disabled');
-					console.log('previous1');
-				}
-			})
-		});
-		
-		
-/*		var currentItem = $('article.content__item');
-		$.get('./jobs/job_'+current+'.html?asdas', function(respons) {
-			
-			$(currentItem).html(respons);// = $.parseHTML(respons);
-			console.log(currentItem);
-		});  */
 
 		// keyboard esc - hide content
 		document.addEventListener('keydown', function(ev) {
