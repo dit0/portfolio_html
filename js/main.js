@@ -238,14 +238,15 @@
 							$(contentItemsContainer).addClass('content--show');
 							next();
 							previous();
+							goHome();
 						});		
 					} else {
 						//desabilitar o botão
 						$(item).addClass('disabled');
 						$(currentItem).addClass( "content__item--show" );
-
+						goHome();
 					}
-					//console.log("current final é: "+current);
+				
 				});
 			});
 		};
@@ -255,6 +256,7 @@
 			[].slice.call(anterior).forEach(function(item) {
 				item.addEventListener('click', function(ev) {
 					ev.preventDefault();
+					goHome();
 					if(current !== 0) {
 						//TODO: this content--show makes the animation on the titles and everything, fix this later, it's not working
 						$(contentItemsContainer).removeClass('content--show');
@@ -270,12 +272,14 @@
 							$(contentItemsContainer).addClass('content--show');
 							previous();
 							next();
+							goHome();
 						});		
 					} else {
 						//desabilitar o botao 
 						$(item).addClass('disabled');
+						goHome();
 					}
-					//console.log("current final é: "+current);
+					
 				})
 			});
 		};
@@ -288,10 +292,9 @@
 		$.get('./jobs/job_'+current+'.html?', function(respons) {
 			
 			$(currentItem).html(respons);// = $.parseHTML(respons);
-			console.log(currentItem + current);			
 			next();
 			previous();
-			
+			goHome();
 		});
 
 		setTimeout(function() {
@@ -323,6 +326,16 @@
 		});
 	}
 
+	function goHome(){
+		linkHome = document.getElementById('link_home');
+			if( linkHome != null){
+				linkHome.addEventListener('click', function(ev) {
+					ev.preventDefault();
+					hideContent();
+				
+				})
+			}
+	};
 	function hideContent() {
 		//var currentItem = $('#'+ --current);
 		//var gridItem = gridItems[current], contentItem = contentItems[current];
